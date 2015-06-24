@@ -43,6 +43,7 @@ $(document).ready(function() {
     });
  });
 $( "#give_answer" ).submit(function(e) {
+  e.preventDefault();
   // $('#flipper').addClass('animated flip');
   var reason = "";
   var val = document.getElementById("box").value.toLowerCase();
@@ -56,6 +57,8 @@ $( "#give_answer" ).submit(function(e) {
     $("#wrongA").show();
     $("#cell").addClass('pink')
   }
+
+  setTimeout($('#give_answer').unbind('submit').submit(), 1000);
 });
 
 </script>
