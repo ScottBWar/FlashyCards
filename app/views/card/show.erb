@@ -52,7 +52,7 @@ $(document).ready(function() {
     $("#wrongA").show();
     $("#cell").addClass('pink');
   }
-  setTimeout($('#give_answer').unbind('submit').submit(), 1000);
+  setTimeout(function(){$('#give_answer').unbind('submit').submit()}, 1000);
 });
 });
 </script>
