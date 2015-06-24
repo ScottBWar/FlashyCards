@@ -27,7 +27,7 @@
 <form action='/card/<%=flash_card.id%>?current_deck_id=<%=flash_card.deck_id%>' id="give_answer" method='POST' name='myForm'>
   <input type='hidden' name='card_id' value='<%=flash_card.id%>'>
   <input type='text' id="box" name='answer' placeholder='answer here'>
-  <input class='button' type='submit'>
+  <input class='button' type='submit' id='submitButton'>
 </form>
 </div>
 
@@ -37,28 +37,23 @@ $(document).ready(function() {
   $("#rightA").hide();
   $("#wrongA").hide();
   $("#toggler").hide();
-    $("#give_answer").submit(function(e) {
-        $("#toggler").show();
-        $("#toggler").hide();
-    });
- });
-$( "#give_answer" ).submit(function(e) {
+  $( "#submitButton" ).click(function(e) {
   e.preventDefault();
   // $('#flipper').addClass('animated flip');
   var reason = "";
   var val = document.getElementById("box").value.toLowerCase();
   var ans = document.getElementById("ANS").innerHTML.toLowerCase();
-  reason += val
+  reason += val;
   if(val == ans) {
     $("#rightA").show();
-    $("#cell").addClass('green')
+    $("#cell").addClass('green');
   }
   else if(val != ans){
     $("#wrongA").show();
-    $("#cell").addClass('pink')
+    $("#cell").addClass('pink');
   }
-
   setTimeout($('#give_answer').unbind('submit').submit(), 1000);
+});
 });
 
 </script>
