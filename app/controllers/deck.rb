@@ -79,3 +79,7 @@ post "/deck/:deckid/card" do
   new_card.save
   redirect "/deck/#{params[:deckid]}/card/new"
 end
+
+after do
+    ActiveRecord::Base.connection.close
+end
