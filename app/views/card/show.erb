@@ -39,23 +39,22 @@ $(document).ready(function() {
   $("#toggler").hide();
     $("#give_answer").submit(function(e) {
         $("#toggler").show();
-        // set.Timeout(continueExecution, 1200);
         $("#toggler").hide();
     });
  });
-$( "#give_answer").submit(function(e) {
-  $('#flipper').addClass('animated flip');
+$( "#give_answer" ).submit(function(e) {
+  // $('#flipper').addClass('animated flip');
   var reason = "";
   var val = document.getElementById("box").value.toLowerCase();
   var ans = document.getElementById("ANS").innerHTML.toLowerCase();
-  reason += val;
+  reason += val
   if(val == ans) {
     $("#rightA").show();
-    $("#cell").addClass('green');
+    $("#cell").addClass('green')
   }
   else if(val != ans){
     $("#wrongA").show();
-    $("#cell").addClass('pink');
+    $("#cell").addClass('pink')
   }
 });
 
