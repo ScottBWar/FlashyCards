@@ -33,3 +33,8 @@ post '/card/:card_id' do
   round.guesses << guess
   redirect "/card/#{params[:card_id]}?current_deck_id=#{card.deck_id}"
 end
+
+
+after do
+    ActiveRecord::Base.connection.close
+end
