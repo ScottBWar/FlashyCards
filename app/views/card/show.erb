@@ -39,7 +39,7 @@ $(document).ready(function() {
   $("#toggler").hide();
   $( "#submitButton" ).click(function(e) {
   e.preventDefault();
-  // $('#flipper').addClass('animated flip');
+  $('#flipper').addClass('animated flip');
   var reason = "";
   var val = document.getElementById("box").value.toLowerCase();
   var ans = document.getElementById("ANS").innerHTML.toLowerCase();
@@ -52,7 +52,7 @@ $(document).ready(function() {
     $("#wrongA").show();
     $("#cell").addClass('pink');
   }
-  setTimeout(function(){$('#give_answer').unbind('submit').submit()}, 1000);
+  setTimeout(function(){$('#give_answer').unbind('submit').submit()}, 1200);
 });
 });
 </script>
