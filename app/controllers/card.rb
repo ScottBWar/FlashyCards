@@ -35,6 +35,3 @@ post '/card/:card_id' do
 end
 
 
-after do
-    ActiveRecord::Base.connection.close
-end
