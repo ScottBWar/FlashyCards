@@ -47,10 +47,12 @@ $(document).ready(function() {
   reason += val;
   if(val == ans) {
     $("#rightA").show();
+    $('#toggler').show();
     $("#cell").addClass('green');
   }
   else if(val != ans){
     $("#wrongA").show();
+    $('#toggler').show();
     $("#cell").addClass('pink');
   }
   setTimeout(function(){$('#give_answer').unbind('submit').submit()}, 1200);
